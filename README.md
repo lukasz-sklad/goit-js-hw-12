@@ -1,113 +1,169 @@
-# Vanilla App Template
+# goit-js-hw-11
+### Zadanie domowe nr 11
 
-Цей проект було створено за допомогою Vite. Для знайомства та налаштування
-додаткових можливостей [звернись до документації](https://vitejs.dev/).
+_Nauka nie zawsze jest łatwa, ale zawsze przynosi dużo nagrody_ 💪
 
-## Створення репозиторію за шаблоном
+_Podsumujmy to, co już zrobiliśmy w module 11._
 
-Використовуй цей репозиторій організації GoIT як шаблон для створення
-репозиторію свого проекту. Для цього натисни на кнопку `«Use this template»` і
-обери опцію `«Create a new repository»`, як показано на зображенні.
+_Aby się sprawdzić, upewnij się, że znasz:_
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
+* _różnicę między protokołami HTTP i HTTPS;_
+* _podstawowe metody HTTP i jak je stosować;_
+* _czym jest CRUD;_
+* _jak wchodzić w interakcje z backendem._
+_Teraz nadszedł czas, aby wykorzystać tę wiedzę w praktyce, tworząc własną aplikację._
 
-На наступному етапі відкриється сторінка створення нового репозиторію. Заповни
-поле його імені, переконайся, що репозиторій публічний, після чого натисни
-кнопку `«Create repository from template»`.
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
 
-Після того, як репозиторій буде створено, необхідно перейти в налаштування
-створеного репозиторію на вкладку `Settings` > `Actions` > `General` як показано
-на зображенні.
+__Zadanie domowe №11__
 
-![Settings GitHub Actions permissions step 1](./assets/gh-actions-perm-1.png)
+* Utwórz repozytorium `goit-js-hw-11`.
+* Stwórz swój projekt za pomocą [Vite](https://vitejs.dev/). Przygotowaliśmy dla Ciebie [gotową kompilację](https://github.com/goitacademy/vanilla-app-template) ze wszystkimi dodatkowymi ustawieniami projektu i zalecamy użycie właśnie jej.
+* Przeczytaj zadanie i wykonaj je w edytorze kodu.
+* Upewnij się, że kod jest formatowany za pomocą `Prettier` i że nie ma żadnych błędów ani ostrzeżeń w konsoli po otwarciu strony zadania na żywo.
+* Przekaż pracę domową do oceny.
 
-Проскроливши сторінку до самого кінця, в секції `«Workflow permissions»` обери
-опцію `«Read and write permissions»` і постав галочку в чекбоксі. Це необхідно
-для автоматизації процесу деплою проекту.
 
-![Settings GitHub Actions permissions step 2](./assets/gh-actions-perm-2.png)
+__Format zadania.__ Praca domowa zawiera dwa linki: do plików źródłowych oraz do strony roboczej na `GitHub Pages`.
 
-Тепер у тебе є особистий репозиторій проекту, зі структурою файлів та папок
-репозиторію-шаблону. Далі працюй з ним, як з будь-яким іншим особистим
-репозиторієм, клонуй його собі на комп'ютер, пиши код, роби коміти та відправляй
-їх на GitHub.
 
-## Підготовка до роботи
 
-1. Переконайся, що на комп'ютері встановлено LTS-версію Node.js.
-   [Скачай та встанови](https://nodejs.org/en/) її якщо необхідно.
-2. Встанови базові залежності проекту в терміналі командою `npm install`.
-3. Запусти режим розробки, виконавши в терміналі команду `npm run dev`.
-4. Перейдіть у браузері за адресою
-   [http://localhost:5173](http://localhost:5173). Ця сторінка буде автоматично
-   перезавантажуватись після збереження змін у файли проекту.
+__Zadanie — Wyszukiwanie obrazów__
 
-## Файли і папки
+Utwórz aplikację do wyszukiwania obrazów według słów kluczowych i wyświetlania ich w galerii. Zaprojektuj elementy interfejsu zgodnie z układem.
 
-- Файли розмітки компонентів сторінки повинні лежати в папці `src/partials` та
-  імпортуватись до файлу `index.html`. Наприклад, файл з розміткою хедера
-  `header.html` створюємо у папці `partials` та імпортуємо в `index.html`.
-- Файли стилів повинні лежати в папці `src/css` та імпортуватись до HTML-файлів
-  сторінок. Наприклад, для `index.html` файл стилів називається `index.css`.
-- Зображення додавай до папки `src/img`. Збирач оптимізує їх, але тільки при
-  деплої продакшн версії проекту. Все це відбувається у хмарі, щоб не
-  навантажувати твій комп'ютер, тому що на слабких компʼютерах це може зайняти
-  багато часу.
 
-## Деплой
+<pre>
+! Skorzystaj z tego <a href="https://www.figma.com/file/m8k9NQV7qZrtYDCvxfD68B/%D0%94%D0%97-JavaScript?type=design&amp;node-id=3-1009&amp;mode=design&amp;t=eCh8cUwdfWOakuAr-0" rel="noopener noreferrer" target="_blank">wzoru</a> do stylizacji układu zadania.
+</pre>
 
-Продакшн версія проекту буде автоматично збиратися та деплоїтись на GitHub
-Pages, у гілку `gh-pages`, щоразу, коли оновлюється гілка `main`. Наприклад,
-після прямого пуша або прийнятого пул-реквесту. Для цього необхідно у файлі
-`package.json` змінити значення прапора `--base=/<REPO>/`, для команди `build`,
-замінивши `<REPO>` на назву свого репозиторію, та відправити зміни на GitHub.
+__Formularz wyszukiwania__
 
-```json
-"build": "vite build --base=/<REPO>/",
+Formularz wyszukiwania jest zawarty w dokumencie HTML. Użytkownik będzie wprowadzał tekst w polu tekstowym do wyszukiwania, a po przesłaniu formularza nastąpi wysłanie żądania HTTP z tym tekstem.
+
+
+
+__Żądania HTTP__
+
+
+
+Korzystaj z publicznego API usługi [Pixabay](https://pixabay.com/api/docs/) dla backendu. Zarejestruj się, uzyskaj unikalny klucz dostępu i zapoznaj się z [dokumentacją](https://pixabay.com/api/docs/#api_search_images).
+
+Lista parametrów ciągu żądania, które trzeba określić:
+
+* `key` — Twój unikalny klucz dostępu do API.
+* `q` — słowo do wyszukania. To, co wprowadzi użytkownik.
+* `image_type` — typ obrazu. Potrzebujesz tylko zdjęć, więc ustaw wartość `photo`.
+* `orientation` — orientacja zdjęcia. Ustaw wartość `horizontal`.
+* `safesearch` — filtrowanie według wieku. Ustaw wartość `true`.
+
+
+Odpowiedź będzie zawierać obiekt z kilkoma właściwościami, z których jedna będzie zawierać tablicę obrazów spełniających kryteria parametrów wyszukiwania.
+
+
+
+Jeśli backend zwróci pustą tablicę, oznacza to, że nie znaleziono nic odpowiedniego. W takim przypadku należy wyświetlić komunikat z tekstem `„Sorry, there are no images matching your search query. Please try again!”` („Przepraszamy, nie ma obrazów zgodnych z wyszukiwaniem. Spróbuj ponownie!”) . Do wyświetlania komunikatów użyj biblioteki [iziToast](https://izitoast.marcelodolza.com/).
+
+
+
+Aby dołączyć kod CSS biblioteki do projektu, należy dodać kolejny import, oprócz tego opisanego w dokumentacji.
+
+
+```css
+// Opisany w dokumentacji
+import iziToast from "izitoast";
+// Opcjonalny import stylów
+import "izitoast/dist/css/iziToast.min.css";
 ```
 
-Далі необхідно зайти в налаштування GitHub-репозиторію (`Settings` > `Pages`) та
-виставити роздачу продакшн версії файлів з папки `/root` гілки `gh-pages`, якщо
-це не було зроблено автоматично.
 
-![GitHub Pages settings](./assets/repo-settings.png)
+Obejrzyj film demo pokazujący działanie aplikacji na tym etapie — 
 
-### Статус деплою
+[![Żądania HTTP](https://filedn.eu/lPq6O1K7j8DR1n7JwTuYjYz/img/warsztaty/video11-1.jpg)](https://goitlmsstorage.b-cdn.net/234b48b7-f415-4245-802b-1746016bac0a19.mp4)
 
-Статус деплою крайнього коміту відображається іконкою біля його ідентифікатора.
+__Galeria i karty obrazów__
 
-- **Жовтий колір** - виконується збірка та деплой проекту.
-- **Зелений колір** - деплой завершився успішно.
-- **Червоний колір** - під час лінтингу, збірки чи деплою сталася помилка.
 
-Більш детальну інформацію про статус можна переглянути натиснувши на іконку, і в
-вікні, що випадає, перейти за посиланням `Details`.
 
-![Deployment status](./assets/deploy-status.png)
+Element galerii (lista podobnych elementów) jest zawarty w dokumencie HTML. Należy dodawać do niego znaczniki kart obrazów po żądaniach HTTP.
 
-### Жива сторінка
 
-Через якийсь час, зазвичай кілька хвилин, живу сторінку можна буде подивитися за
-адресою, вказаною на вкладці `Settings` > `Pages` в налаштуваннях репозиторію.
-Наприклад, ось посилання на живу версію для цього репозиторію
 
-[https://goitacademy.github.io/vanilla-app-template/](https://goitacademy.github.io/vanilla-app-template/).
+Każdy obraz jest opisany przez obiekt, z którego interesują nas tylko następujące właściwości:
 
-Якщо відкриється порожня сторінка, переконайся, що у вкладці `Console` немає
-помилок пов'язаних з неправильними шляхами до CSS та JS файлів проекту
-(**404**). Швидше за все у тебе неправильне значення прапора `--base` для
-команди `build` у файлі `package.json`.
+* `webformatURL` — link do małego obrazka, aby wyświetlić listę kart w galerii.
+* `largeImageURL` — link do dużego obrazu dla okna modalnego.
+* `tags` — tekst opisujący obraz. Nadaje się do atrybutu alt.
+* `likes` — liczba polubień.
+* `views` — liczba wyświetleń.
+* `comments` — liczba komentarzy.
+* `downloads` — liczba pobrań.
 
-## Як це працює
 
-![How it works](./assets/how-it-works.png)
+Przed wyszukaniem nowego słowa kluczowego należy całkowicie oczyszczać zawartość galerii, aby nie mieszać wyników zapytań.
 
-1. Після кожного пуша у гілку `main` GitHub-репозиторію, запускається
-   спеціальний скрипт (GitHub Action) із файлу `.github/workflows/deploy.yml`.
-2. Усі файли репозиторію копіюються на сервер, де проект ініціалізується та
-   проходить лінтинг та збірку перед деплоєм.
-3. Якщо всі кроки пройшли успішно, зібрана продакшн версія файлів проекту
-   відправляється у гілку `gh-pages`. В іншому випадку, у лозі виконання скрипта
-   буде вказано в чому проблема.
+Obejrzyj film demo pokazujący działanie aplikacji na tym etapie — 
+
+
+[![Galeria i karty obrazów](https://filedn.eu/lPq6O1K7j8DR1n7JwTuYjYz/img/warsztaty/video11-2.jpg)](https://goitlmsstorage.b-cdn.net/5c24cb91-7b4c-4912-a1f4-c4a6dd6bf92920.mp4)
+
+Biblioteka `SimpleLightbox`
+
+
+
+Dodaj wyświetlanie dużej wersji obrazu za pomocą biblioteki [SimpleLightbox](https://simplelightbox.com/), aby utworzyć pełnoprawną galerię.
+
+
+
+Aby dołączyć kod CSS biblioteki do projektu, należy dodać jeszcze jeden import, oprócz tego opisanego w dokumentacji.
+
+
+```javascript
+// Opisany w dokumentacji
+import SimpleLightbox from "simplelightbox";
+// Opcjonalny import stylów
+import "simplelightbox/dist/simple-lightbox.min.css";
+```
+
+
+* W znacznikach należy zawinąć każdą kartę obrazu w link, jak opisano w dokumentacji w [sekcji Markup](https://github.com/andreknieriem/simplelightbox#markup).
+* Biblioteka zawiera metodę `[refresh()](<https://github.com/andreknieriem/simplelightbox#public-methods>)`, która musi być wywoływana przy każdym dodaniu nowych elementów do galerii.
+
+
+Obejrzyj film demo pokazujący działanie aplikacji na tym etapie — 
+
+
+
+[![Biblioteka SimpleLightbox](https://filedn.eu/lPq6O1K7j8DR1n7JwTuYjYz/img/warsztaty/video11-3.jpg)](https://goitlmsstorage.b-cdn.net/b35d5472-fe97-42b8-8264-a0f12e463dc821.mp4)
+
+
+__Wskaźnik pobierania__
+
+Dodaj element, który informuje użytkownika, że trwa proces pobierania obrazów z backendu. Wskaźnik pobierania powinien pojawić się tuż przed rozpoczęciem żądania HTTP i zniknąć po jego zakończeniu.
+
+Obejrzyj film demo pokazujący działanie aplikacji na tym etapie — 
+
+
+[![Wskaźnik pobierania](https://filedn.eu/lPq6O1K7j8DR1n7JwTuYjYz/img/warsztaty/video11-4.jpg)](https://goitlmsstorage.b-cdn.net/7cc20db1-f940-4252-9a69-9e837b5ec46c22.mp4)
+
+Zamiast zwykłego tekstu, jak zostało to pokazane w filmie demo, można użyć biblioteki z dobrymi wskaźnikami pobierania, takiej jak [css-loader](https://github.com/vineethtrv/css-loader). Wideotutorial na temat korzystania z tej biblioteki jest dostępny w [README.md](http://readme.md/) ich repozytorium.
+
+
+
+Na co będzie zwracał uwagę mentor podczas sprawdzania pracy:
+
+* Praca domowa zawiera dwa linki: do plików źródłowych i do żywej strony na `GitHub Pages`.
+* Projekt został zrealizowany z pomocą [Vite](https://vitejs.dev/).
+* Konsola w narzędziach deweloperskich nie zawiera błędów, ostrzeżeń i konsoli logów.
+* Biblioteki iziToast, SimpleLightbox i css-loader są podłączone do projektu.
+* Elementy na stronie są stylizowane zgodnie z układem (lub własnymi stylami).
+* Strona ma formularz wyszukiwania obrazów według wyszukiwanego słowa.
+* Po przesłaniu formularza przed wysłaniem żądania do backendu pojawia się wskaźnik pobierania z css-loadera, a poprzednie wyniki wyszukiwania na stronie są usuwane.
+* Po przesłaniu formularza do backendu zostaje wysłane żądanie według słowa kluczowego w celu wyszukania obrazów ze wszystkimi parametrami określonymi w zadaniu domowym.
+* Po otrzymaniu odpowiedzi z backendu wskaźnik pobierania znika, a obrazy są wyświetlane na stronie na podstawie danych otrzymanych z backendu. Lub pojawia się komunikat, że nie znaleziono odpowiednich wyników.
+* Nowe obrazy są dodawane do DOM podczas jednej operacji.
+* Po dodaniu nowych elementów do listy obrazów w instancji SimpleLightbox wywoływana jest metoda `refresh()`.
+* Po kliknięciu małego obrazka w galerii jego powiększona wersja otwiera się w oknie modalnym przy użyciu biblioteki SimpleLightbox.
+* Podczas wykonywania żądań HTTP, używane są metody `then()` i `catch()` aby poradzić sobie z możliwymi błędami i zapobiec awarii strony.
+
+https://lukasz-sklad.github.io/goit-js-hw-11/
