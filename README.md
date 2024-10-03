@@ -96,4 +96,5 @@ Na co mentor będzie zwracał uwagę podczas sprawdzania pracy domowej:
 * Kliknięcie małego obrazka w galerii otwiera jego powiększoną wersję w oknie modalnym przy użyciu biblioteki `SimpleLightbox`.
 
 https://github.com/lukasz-sklad/goit-js-hw-12/
+
 https://lukasz-sklad.github.io/goit-js-hw-12/
