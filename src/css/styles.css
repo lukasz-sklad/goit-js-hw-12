@@ -80,11 +80,45 @@ button:hover {
 }
 
 .image-info i {
-  color: #3a48ca;
+  color: #19c639;
   font-size: 16px;
 }
 
-.loader {
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  /* Dystans od poprzednich elementów, opcjonalny */
+}
+
+#load-more {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#end-message {
+  display: none;
+  /* Ukryty na początku */
+  text-align: center;
+  /* Wyrównanie tekstu do środka */
+  padding: 20px;
+  /* Odstęp wewnętrzny */
+  color: #555;
+  /* Kolor tekstu */
+  background-color: #f0f0f0;
+  /* Kolor tła */
+  border-radius: 8px;
+  /* Zaokrąglone rogi */
+  margin: 20px auto;
+  /* Odstęp z góry i z dołu oraz wyśrodkowanie */
+  max-width: 600px;
+  /* Maksymalna szerokość dla lepszego wyglądu */
+  font-size: 18px;
+  /* Wielkość tekstu */
+}
+
+/* .loader {
   position: relative;
   margin: auto;
   box-sizing: border-box;
@@ -134,7 +168,62 @@ button:hover {
   50% {
     opacity: 1
   }
+} */
+
+/* ---------------------------------------------------------------- */
+
+.loader {
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  border: 3px dotted #FFF;
+  border-style: solid solid dotted dotted;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
 }
+
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px dotted #FF3D00;
+  border-style: solid solid dotted;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  animation: rotationBack 1s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+/* ---------------------------------------------------------------- */
 
 @keyframes loading {
   to {
