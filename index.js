@@ -1,0 +1,12 @@
+/* empty css                      */import{i,S as f}from"./assets/vendor-CR5ngMdS.js";(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))o(t);new MutationObserver(t=>{for(const r of t)if(r.type==="childList")for(const n of r.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&o(n)}).observe(document,{childList:!0,subtree:!0});function l(t){const r={};return t.integrity&&(r.integrity=t.integrity),t.referrerPolicy&&(r.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?r.credentials="include":t.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function o(t){if(t.ep)return;t.ep=!0;const r=l(t);fetch(t.href,r)}})();const d=document.getElementById("search-form"),c=document.getElementById("gallery"),a=document.getElementById("loader"),m="46312866-230437729350338e2d6e4b6e5";d.addEventListener("submit",s=>{s.preventDefault();const e=document.getElementById("search-query").value.trim();e?p(e):i.error({title:"Error",message:"Please enter a search term!",position:"topCenter",timeout:3e3})});function p(s){a.style.display="block",c.innerHTML="",fetch(`https://pixabay.com/api/?key=${m}&q=${encodeURIComponent(s)}&image_type=photo&orientation=horizontal&safesearch=true`).then(e=>{if(!e.ok)throw new Error("Network response was not ok");return e.json()}).then(e=>{a.style.display="none",e.hits.length>0?u(e.hits):i.info({title:"No Results",message:"Sorry, no images found. Please try another search term!",position:"topCenter",timeout:3e3})}).catch(e=>{console.error("Fetch error:",e),a.style.display="none",i.error({title:"Error",message:"Failed to fetch images. Please check your internet connection and try again.",position:"topCenter",timeout:3e3})})}function u(s){const e=s.map(o=>`
+    <a href="${o.largeImageURL}" class="gallery-item" data-lightbox="gallery" data-title="${o.tags}">
+      <img src="${o.webformatURL}" alt="${o.tags}" />
+      <div class="image-info">
+        <span><i class="fas fa-heart"></i> ${o.likes}</span>
+        <span><i class="fas fa-eye"></i> ${o.views}</span>
+        <span><i class="fas fa-comments"></i> ${o.comments}</span>
+        <span><i class="fas fa-download"></i> ${o.downloads}</span>
+      </div>
+    </a>
+  `).join("");c.innerHTML=e,new f(".gallery a",{captionsData:"alt",captionDelay:250}).refresh()}
+//# sourceMappingURL=index.js.map
